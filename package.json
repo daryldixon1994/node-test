@@ -1,0 +1,19 @@
+{
+  "name": "tuto-node-js",
+  "version": "1.0.0",
+  "description": "this is our first node js workshop",
+  "main": "app.js",
+  "scripts": {
+   "server": "nodemon app.js"
+  },
+  "keywords": [
+    "tuto",
+    "workshop"
+  ],
+  "author": "Anwar",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "nodemon": "^3.1.7"
+  }
+}
