@@ -18,6 +18,16 @@ const server = http.createServer((req, res) => {
     const data = fs.readFileSync(indexPath, { encoding: "utf-8" });
     res.write(data);
     res.end();
+  } else if (req.url.match("/styles/style.css")) {
+    const cssPath = path.resolve("content", "styles", "style.css");
+    let fileStream = fs.createReadStream(cssPath, "UTF-8");
+    res.writeHead(200, { "Content-Type": "text/css" });
+    fileStream.pipe(res);
+  } else if (req.url.match("/assets/logo.webp")) {
+    const imgPath = path.resolve("assets", "logo.webp");
+    let fileStream = fs.createReadStream(imgPath);
+    res.writeHead(200, { "Content-Type": "image/webp" });
+    fileStream.pipe(res);
   }
 });
 
